@@ -1,6 +1,6 @@
 # TurtleBot3 Waffle 迷宫 · 三点自动导航 (waffle_ws)
 
-ROS 2 Humble + Gazebo Classic 独立工作空间：7×7 **完美迷宫**（固定 seed、世界与地图同一生成器输出），TurtleBot3 Waffle 在迷宫里做 **slam_toolbox 在线建图 + Navigation2 + 三点自动导航**（已实测自动导航目标 SUCCEEDED）。
+ROS 2 Humble + Gazebo Classic 独立工作空间：7×7 **完美迷宫**（走廊净空约 1.35 m，固定 seed、世界与地图同一生成器输出），TurtleBot3 Waffle 在迷宫里做 **slam_toolbox 在线建图 + Navigation2 + 三点自动导航**（已实测自动导航目标 SUCCEEDED）。
 
 ## 结构
 
@@ -13,14 +13,14 @@ src/
 tools/generate_maze.py     迷宫生成器(世界+地图+航点同一几何来源)
 ```
 
-三点目标（地图 == Gazebo 世界坐标；机器人出生在起点格 (0.5, 0.5)）：
+三点目标（地图 == Gazebo 世界坐标；机器人出生在起点格 (0.75, 0.75)）：
 
 ```yaml
 # waffle_navigation/config/waypoints.yaml
 targets:
-  - {x: 4.5, y: 2.5, yaw: 1.5708}
-  - {x: 6.5, y: 3.5, yaw: -1.5708}
-  - {x: 4.5, y: 5.5, yaw: 0.0}
+  - {x: 6.75, y: 3.75, yaw: 1.5708}
+  - {x: 9.75, y: 5.25, yaw: -1.5708}
+  - {x: 6.75, y: 8.25, yaw: 0.0}
 ```
 
 ## 构建
@@ -35,7 +35,7 @@ zsh 必须 source `.zsh` 版本（source `.bash` 会因 `${BASH_SOURCE[0]}` 为�
 
 ## 运行
 
-终端 A —— 迷宫仿真（默认不弹 RViz，只有一个 Gazebo 窗口；Waffle 出生在起点格）：
+终端 A —— 迷宫仿真（默认**不开 RViz**，只有 Gazebo 一个窗口；Waffle 出生在起点格 (0.75,0.75)）：
 
 ```bash
 source /opt/ros/humble/setup.zsh

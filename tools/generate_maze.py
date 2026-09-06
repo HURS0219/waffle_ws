@@ -23,11 +23,11 @@ from collections import deque
 # ------------------ maze geometry (edit here) ------------------
 ROWS = 7           # number of corridor rows (cells)
 COLS = 7           # number of corridor columns (cells)
-CELL = 1.0         # corridor centre-to-centre distance in metres
+CELL = 1.5         # corridor centre-to-centre distance in metres (~1.35 m free)
 WALL_T = 0.15      # wall thickness in metres
 WALL_H = 2.0       # wall height in metres
 RES = 0.05         # map resolution in m/pixel
-MARGIN = 0.30      # map padding beyond the outer walls in metres
+MARGIN = 0.50      # map padding beyond the outer walls in metres
 SEED = 20240901    # fixed seed -> reproducible maze
 
 FREE = 254         # pgm value for free space

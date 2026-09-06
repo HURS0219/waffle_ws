@@ -34,8 +34,8 @@ def generate_launch_description():
     # Launch configuration variables
     world = LaunchConfiguration('world', default=default_world)
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='0.5')
-    y_pose = LaunchConfiguration('y_pose', default='0.5')
+    x_pose = LaunchConfiguration('x_pose', default='0.75')
+    y_pose = LaunchConfiguration('y_pose', default='0.75')
     yaw = LaunchConfiguration('yaw', default='0.0')
     open_rviz = LaunchConfiguration('open_rviz', default='false')
     use_gui = LaunchConfiguration('use_gui', default='true')
@@ -51,10 +51,10 @@ def generate_launch_description():
         description='Use simulation (Gazebo) clock if true',
     )
     declare_x_cmd = DeclareLaunchArgument(
-        'x_pose', default_value='0.5',
+        'x_pose', default_value='0.75',
         description='Spawn x position (default: maze start cell)')
     declare_y_cmd = DeclareLaunchArgument(
-        'y_pose', default_value='0.5',
+        'y_pose', default_value='0.75',
         description='Spawn y position (default: maze start cell)')
     declare_yaw_cmd = DeclareLaunchArgument(
         'yaw', default_value='0.0', description='Spawn yaw in radians')
